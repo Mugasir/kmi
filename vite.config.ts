@@ -10,7 +10,7 @@ export default defineConfig({
     TanStackRouterVite(),
     react(),
     cloudflare({
-      configPath: false,   // avoids wrangler.toml parse errors
+      configPath: false,   // prevents wrangler.toml parse errors
     }),
   ],
 })
