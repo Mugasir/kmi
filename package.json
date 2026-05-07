@@ -10,6 +10,9 @@
     "preview": "vite preview",
     "lint": "eslint .",
     "format": "prettier --write ."
+  "preinstall": "bun install",
+  ...
+}
   },
   "dependencies": {
     "@cloudflare/vite-plugin": "^1.25.5",
