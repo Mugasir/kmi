@@ -1,11 +1,17 @@
-// vite.config.ts
 import { defineConfig } from 'vite'
+import react from '@vitejs/plugin-react'
+import { cloudflare } from '@cloudflare/vite-plugin'
+import { TanStackRouterPlugin } from '@tanstack/router-plugin'
 import { tanstackStart } from '@tanstack/react-start/plugin/vite'
 
 export default defineConfig({
   plugins: [
-    tanstackStart({
-      target: 'cloudflare', // Important!
+    tanstackStart({ target: 'cloudflare' }),
+    TanStackRouterPlugin(),
+    react(),
+    cloudflare({
+      // 🚨 This is the key fix: prevents reading empty/malformed wrangler.toml
+      configPath: false,
     }),
   ],
 })
