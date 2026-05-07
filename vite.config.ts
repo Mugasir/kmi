@@ -9,6 +9,8 @@ export default defineConfig({
     tanstackStart({ target: 'cloudflare' }),
     TanStackRouterPlugin(),
     react(),
-    cloudflare(),
+    cloudflare({
+      configPath: false,   // ← prevents reading wrangler.toml
+    }),
   ],
 })
