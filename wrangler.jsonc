@@ -1,2 +1,4 @@
-// wrangler.jsonc
-"name": "kmi1",
+# wrangler.toml
+name = "my-tanstack-app"
+main = "./dist/_worker.js"
+compatibility_date = "2025-01-09"
