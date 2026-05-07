@@ -6,11 +6,14 @@ import { tanstackStart } from '@tanstack/react-start/plugin/vite'
 
 export default defineConfig({
   plugins: [
-    tanstackStart({ target: 'cloudflare' }),
+    tanstackStart({
+      target: 'cloudflare',
+    }),
     TanStackRouterPlugin(),
     react(),
     cloudflare({
-      configPath: false,   // ← prevents reading wrangler.toml
+      // Prevents wrangler.toml parse errors – use only if your config is empty or invalid
+      configPath: false,
     }),
   ],
 })
